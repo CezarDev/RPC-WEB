@@ -37,19 +37,6 @@ const TaskCard = ({ task }: { task: Task }) => {
       text: message,
     })
   }
-  // const getClassName = (statusId: number) => {
-  //   console.log(`statusId: ${statusId}`)
-  //   switch (statusId) {
-  //     case 1:
-  //       return "bg-violet-300";
-  //     case 2:
-  //       return "bg-blue-300";
-  //     case 3:
-  //       return "bg-lime-300";
-  //     default:
-  //       return "bg-gray-300";
-  //   }
-  // }
 
   const handleDeleteClick = (task: Task) => {
     setIsDeleteModalOpen(true);
@@ -96,8 +83,7 @@ const TaskCard = ({ task }: { task: Task }) => {
       updateTask(task, accessToken)
         .then((data) => {
           console.log(JSON.stringify(data));
-          // setEditedTask(data);
-          // setIsEditModalOpen(false);
+
           task = data.task ??  data.task;
            messageAlert(data.message, 'success');
            window.location.reload();
